@@ -1,3 +1,24 @@
+# Installation
+Install in venv.
+```sh
+# Clone this repo
+git clone https://github.com/0nhc/curobo.git
+cd curobo
+# Create a Virtual Python 3.10 Environment
+micromamba create -n curobo python=3.10
+micromamba activate curobo
+# Install CUDA 12.1 with Pytorch 2.4.1
+micromamba install conda-forge::cuda-toolkit=12.1
+pip install torch==2.4.1 -i https://download.pytorch.org/whl/cu121
+# Install cuRobo
+micromamba install typeguard "urllib3>=1.21.1,<3" "protobuf>=3.19.6,!=4.24.0" -c conda-forge
+pip install -e . --no-build-isolation
+```
+Quick start:
+```sh
+python demo.py
+```
+
 <!--
 Copyright (c) 2023 NVIDIA CORPORATION & AFFILIATES. All rights reserved.
 
